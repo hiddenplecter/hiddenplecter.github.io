@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIDDEN PROCESS SRL - Design Sisteme Informatice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            'light': '#fef3c7',
+                            'DEFAULT': '#f59e0b',
+                            'dark': '#b45309'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-gray-300 font-sans">
+
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800/50">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#acasa" class="flex items-center gap-3 text-2xl font-bold font-serif text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-DEFAULT">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-3.75 8.25h9.75a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9.75a2.25 2.25 0 00-2.25 2.25v9A2.25 2.25 0 006.75 20.25z" />
+                    </svg>
+                    HIDDEN PROCESS
+                </a>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#despre" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Despre Noi</a>
+                    <a href="#servicii" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Servicii</a>
+                    <a href="#avantaje" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Avantaje</a>
+                    <a href="#proces" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Proces</a>
+                    <a href="#contacte" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <button id="openModalBtn" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-gray-900 bg-brand-DEFAULT hover:bg-brand-dark rounded-md shadow-sm transition-colors">
+                    Contactați-ne
+                </button>
+                <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center p-2 text-gray-400 hover:text-white rounded-md">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#despre" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Despre Noi</a>
+                <a href="#servicii" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Servicii</a>
+                <a href="#avantaje" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Avantaje</a>
+                <a href="#proces" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Proces</a>
+                <a href="#contacte" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+                <button id="openModalBtnMobile" class="w-full mt-2 inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-gray-900 bg-brand-DEFAULT hover:bg-brand-dark rounded-md shadow-sm transition-colors">
+                    Contactați-ne
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="acasa" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1519389950473-473247424d19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Echipa tehnică lucrând" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gray-900/70 backdrop-brightness-50"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 py-32 sm:py-48 lg:py-56">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl font-serif">
+                    Proiectarea Sistemelor de Mâine
+                </h1>
+                <p class="mt-6 text-lg max-w-3xl mx-auto leading-8 text-gray-200">
+                    Soluții informatice profesionale și servicii tehnice de avangardă pentru a transforma viziunea dumneavoastră în realitate digitală.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#servicii" class="rounded-md bg-brand-DEFAULT px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-brand-dark transition-colors">
+                        Descoperiți Serviciile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="despre" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
+                            Cine Suntem: Inovație și Expertiză
+                        </h2>
+                        <p class="mt-6 text-lg leading-8 text-gray-300">
+                            HIDDEN PROCESS SRL este partenerul dumneavoastră de încredere în navigarea peisajului digital complex de astăzi. Suntem specializați în designul de sisteme informatice și oferim o gamă completă de servicii profesionale, științifice și tehnice.
+                        </p>
+                        <p class="mt-4 text-lg leading-8 text-gray-300">
+                            Misiunea noastră este de a oferi soluții personalizate care nu doar că îndeplinesc, dar depășesc așteptările clienților noștri. Cu o echipă de experți dedicați, combinăm cunoștințele tehnice aprofundate cu o perspectivă creativă pentru a rezolva cele mai dificile provocări.
+                        </p>
+                        <p class="mt-4 text-lg leading-8 text-gray-300">
+                            De la consultanță inițială la implementare și suport, ne angajăm să oferim excelență și valoare adăugată la fiecare pas.
+                        </p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1506&q=80" 
+                         alt="Cod de programare pe ecran" 
+                         class="w-full h-auto rounded-lg shadow-2xl object-cover max-h-[500px]">
+                </div>
+            </div>
+        </section>
+
+        <section id="servicii" class="py-24 sm:py-32 bg-gray-800/50">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
+                        Soluțiile Noastre Strategice
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">
+                        Oferim servicii complete pentru a acoperi întregul ciclu de viață al proiectului dumneavoastră tehnic.
+                    </p>
+                </div>
+                <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                    <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                        <div class="flex flex-col p-8 bg-gray-900 rounded-lg shadow-xl">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4 text-brand-DEFAULT">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 15.75L3 17.25m-1.125 1.125h3.375m-3.375 0L1.5 15.75m0 0L3 14.25m-1.5 1.5L1.5 14.25m6-1.5L9 14.25m0 0l1.125 1.125M9 14.25l1.125-1.125m0 0L9 11.625m1.125 1.125L11.25 15m0 0l1.125 1.125m-1.125 0L13.5 14.25m-1.125 1.125L11.25 11.625m1.125 1.125L13.5 15m0 0l1.125 1.125m-1.125 0L15 14.25M13.5 15l1.125-1.125m0 0L13.5 11.625m1.125 1.125L15 15m0 0l1.125 1.125m-1.125 0L16.5 14.25m-1.125 1.125L15 11.625M16.5 15l1.125-1.125m0 0L16.5 11.625m1.125 1.125L18 15m0 0l1.125 1.125m-1.125 0L19.5 14.25m-1.125 1.125L18 11.625m1.125 1.125L19.5 15m0 0l1.125 1.125m-1.125 0L21 14.25m-1.125 1.125L19.5 11.625M21 15l1.125-1.125m0 0L21 11.625m1.125 1.125L22.5 15m-1.125-1.125h-9M3.75 3.75L3 5.25m-1.125 1.125h3.375m-3.375 0L1.5 3.75m0 0L3 2.25m-1.5 1.5L1.5 2.25m6-1.5L9 2.25m0 0l1.125 1.125M9 2.25l1.125-1.125m0 0L9 0m1.125 1.125L11.25 3m0 0l1.125 1.125m-1.125 0L13.5 2.25m-1.125 1.125L11.25 0m1.125 1.125L13.5 3m0 0l1.125 1.125m-1.125 0L15 2.25M13.5 3l1.125-1.125m0 0L13.5 0m1.125 1.125L15 3m0 0l1.125 1.125m-1.125 0L16.5 2.25m-1.125 1.125L15 0m1.125 1.125L16.5 3m0 0l1.125 1.125m-1.125 0L18 2.25m-1.125 1.125L16.5 0m1.125 1.125L18 3m0 0l1.125 1.125m-1.125 0L19.5 2.25m-1.125 1.125L18 0m1.125 1.125L19.5 3m0 0l1.125 1.125m-1.125 0L21 2.25m-1.125 1.125L19.5 0m1.125 1.125L21 3m0 0l1.125 1.125m-1.125 0L22.5 2.25m-1.125 1.125L21 0m1.125 1.125L22.5 3m-1.125-1.125h-9" />
+                                </svg>
+                                Design de Sisteme Informatice
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Creăm arhitecturi de sistem robuste, scalabile și sigure, adaptate nevoilor specifice ale afacerii dumneavoastră. Analizăm fluxurile de lucru existente și proiectăm soluții optimizate. Asigurăm integrarea perfectă cu infrastructura IT actuală.
+                            </dd>
+                        </div>
+                        <div class="flex flex-col p-8 bg-gray-900 rounded-lg shadow-xl">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4 text-brand-DEFAULT">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+                                </svg>
+                                Servicii de Consultanță IT
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Oferim consultanță strategică pentru a vă alinia tehnologia la obiectivele de afaceri. Echipa noastră vă ajută să evaluați tehnologiile emergente și să luați decizii informate. Vă ghidăm în procesul de transformare digitală.
+                            </dd>
+                        </div>
+                        <div class="flex flex-col p-8 bg-gray-900 rounded-lg shadow-xl">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4 text-brand-DEFAULT">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.69-5.69" />
+                                </svg>
+                                Management de Proiect Tehnic
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Supraveghem întregul ciclu de viață al proiectelor dumneavoastră tehnice, de la inițiere până la finalizare. Asigurăm livrarea la timp, în limita bugetului și conform specificațiilor. Comunicăm transparent și gestionăm proactiv riscurile.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section id="avantaje" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
+                        De Ce Să Colaborați cu Noi?
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">
+                        Parteneriatul cu HIDDEN PROCESS SRL vă oferă un avantaj competitiv clar.
+                    </p>
+                </div>
+                <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                    <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                        <div class="flex flex-col">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                Expertiză Dovedită
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Echipa noastră este formată din profesioniști cu experiență vastă în diverse domenii tehnice și științifice. Suntem la curent cu cele mai recente tendințe și tehnologii.
+                            </dd>
+                        </div>
+                        <div class="flex flex-col">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                Abordare Personalizată
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Nu credem în soluții universale. Analizăm în profunzime nevoile unice ale afacerii dumneavoastră și creăm o strategie adaptată.
+                            </dd>
+                        </div>
+                        <div class="flex flex-col">
+                            <dt class="text-xl font-semibold leading-7 text-white">
+                                Transparență și Fiabilitate
+                            </dt>
+                            <dd class="mt-2 flex-auto text-base leading-7 text-gray-300">
+                                Comunicarea deschisă este fundamentală pentru noi. Vă ținem la curent pe tot parcursul proiectului și ne respectăm angajamentele.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section id="proces" class="py-24 sm:py-32 bg-gray-800/50">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
+                        Metodologia Noastră de Lucru
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300">
+                        Urmăm un proces structurat în 3 etape pentru a garanta succesul fiecărui proiect.
+                    </p>
+                </div>
+                <div class="relative mt-16">
+                    <div aria-hidden="true" class="absolute inset-0 hidden md:flex items-center">
+                        <div class="w-full border-t-2 border-dashed border-gray-600"></div>
+                    </div>
+                    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="flex flex-col items-center text-center p-6 bg-gray-900 rounded-lg shadow-lg">
+                            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-brand-DEFAULT text-gray-900 font-bold text-2xl mb-4">
+                                01
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Analiză și Planificare</h3>
+                            <p class="text-gray-300">
+                                Începem cu o înțelegere profundă a obiectivelor dumneavoastră. Definim cerințele, stabilim foaia de parcurs și planificăm resursele.
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-6 bg-gray-900 rounded-lg shadow-lg">
+                            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-brand-DEFAULT text-gray-900 font-bold text-2xl mb-4">
+                                02
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Design și Implementare</h3>
+                            <p class="text-gray-300">
+                                Echipa noastră de experți proiectează arhitectura sistemului și dezvoltă soluția. Trecem prin cicluri de testare riguroase.
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-6 bg-gray-900 rounded-lg shadow-lg">
+                            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-brand-DEFAULT text-gray-900 font-bold text-2xl mb-4">
+                                03
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Livrare și Suport</h3>
+                            <p class="text-gray-300">
+                                Implementăm soluția finală în mediul dumneavoastră și oferim training. Asigurăm suport tehnic continuu pentru a garanta performanța optimă.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 sm:py-32 bg-brand-DEFAULT">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-serif">
+                        Sunteți Gata să Inovați?
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-800">
+                        Haideți să discutăm despre cum putem transforma provocările dumneavoastră tehnice în oportunități de creștere.
+                    </p>
+                    <div class="mt-10">
+                        <button id="openModalBtnCta" class="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 transition-colors">
+                            Luați Legătura
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacte" class="bg-gray-900 border-t border-gray-800">
+        <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold font-serif text-white">HIDDEN PROCESS SRL</h3>
+                    <p class="mt-4 text-base text-gray-400">
+                        Design de sisteme informatice și servicii conexe.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white">Informații de Contact</h4>
+                    <address class="mt-4 not-italic text-gray-400">
+                        <p class="mb-2">
+                            <strong>Adresă:</strong><br>
+                            ALEEA POARTA ALBA NR. 7-9 BL. 110A SC. 3 ET. 2 AP. 116, Bucuresti
+                        </p>
+                        <p>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:info@hiddenprocess.pro" class="text-brand-DEFAULT hover:text-brand-light">info@hiddenprocess.pro</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 text-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2025 HIDDEN PROCESS SRL. Toate drepturile rezervate.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-center items-center p-4 hidden transition-opacity duration-300">
+        <div class="bg-white text-gray-900 rounded-lg shadow-xl w-full max-w-md relative animate-fade-in-down">
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="p-8">
+                <h3 class="text-2xl font-bold mb-6 text-center font-serif">Trimiteți-ne un Mesaj</h3>
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Numele Dumneavoastră</label>
+                        <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-DEFAULT focus:border-brand-DEFAULT">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-DEFAULT focus:border-brand-DEFAULT">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesaj</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-DEFAULT focus:border-brand-DEFAULT"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-DEFAULT text-gray-900 font-bold py-3 px-4 rounded-md shadow-sm hover:bg-brand-dark transition-colors">
+                        Trimite Mesajul
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-center items-center p-4 hidden transition-opacity duration-300">
+        <div class="bg-white text-gray-900 rounded-lg shadow-xl w-full max-w-sm text-center p-8 relative animate-fade-in-down">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Mesaj Trimis!</h3>
+            <p class="text-gray-600 mb-6">
+                Vă mulțumim. Vă vom contacta în curând.
+            </p>
+            <button id="closeSuccessModalBtn" class="w-full bg-brand-DEFAULT text-gray-900 font-bold py-2 px-4 rounded-md shadow-sm hover:bg-brand-dark transition-colors">
+                Închide
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactModal = document.getElementById('contactModal');
+            const successModal = document.getElementById('successModal');
+            
+            const openModalBtns = [
+                document.getElementById('openModalBtn'),
+                document.getElementById('openModalBtnMobile'),
+                document.getElementById('openModalBtnCta')
+            ];
+            
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+            const contactForm = document.getElementById('contactForm');
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            openModalBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        contactModal.classList.remove('hidden');
+                    });
+                }
+            });
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', () => {
+                    contactModal.classList.add('hidden');
+                });
+            }
+
+            if (closeSuccessModalBtn) {
+                closeSuccessModalBtn.addEventListener('click', () => {
+                    successModal.classList.add('hidden');
+                });
+            }
+
+            if (contactModal) {
+                contactModal.addEventListener('click', (event) => {
+                    if (event.target === contactModal) {
+                        contactModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            if (successModal) {
+                successModal.addEventListener('click', (event) => {
+                    if (event.target === successModal) {
+                        successModal.classList.add('hidden');
+                    }
+                });
+            }
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    contactModal.classList.add('hidden');
+                    successModal.classList.remove('hidden');
+                    contactForm.reset();
+                });
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#' || href === '#acasa') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const targetEl = document.querySelector(href);
+                        if (targetEl) {
+                            e.preventDefault();
+                            const headerOffset = 80;
+                            const elementPosition = targetEl.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
